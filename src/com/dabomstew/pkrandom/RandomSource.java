@@ -47,14 +47,18 @@ public class RandomSource {
 	// this value will be used to adjust the frame in which the local random backup is reseeded
 	private static int reseedTimeout;
 	
+	// this is the random queue which will hold the numbers we pull from en masse from random.org
+	private static ArrayList<Integer> queuedRandoms;
+	
 	static int calls = 0;
 	static int backupCalls = 0;
 	
-	public static RandomSourceInstance instance;
+	public static RandomSourceInstance instance = new RandomSourceInstance();
 	
 	// this instance is used in the collections shuffle
 	private static class RandomSourceInstance extends Random
 	{
+		@Override
 		public int nextInt(int n)
 		{
 			return RandomSource.nextInt(n);
@@ -62,15 +66,37 @@ public class RandomSource {
 	}
 
 	public static int nextInt(int randomSize) {
-		calls++;
-//		
-//		try {
+		incCalls();
+
+		try {
 //			return ig.generate(0, randomSize-1, 1).get(0);
-//		}
-//		catch (IOException e) {
+			
+			getMoreRandomsForTheQueue();
+			
+			return queuedRandoms.remove(0) % randomSize;
+		}
+		catch (IOException e) {
 			incrementBackupCalls();
 			return backupSource.nextInt(randomSize);
-//		}
+		}
+	}
+
+	private static boolean getMoreRandomsForTheQueue()  throws IOException
+	{
+		if (queuedRandoms == null || queuedRandoms.size() < 1)
+		{
+			// grab a sheet of 10,000 randoms from random.org
+			try {
+				queuedRandoms = ig.generate(0, 1000000000, 10000);
+				return true; // successful
+			} catch (IOException e) {
+				System.out.println("Error grabbing random sheet");
+				throw new IOException("Error");
+			}
+		}
+		
+		return true;
+		
 	}
 
 	private static void incrementBackupCalls() 
@@ -79,6 +105,8 @@ public class RandomSource {
 //		System.out.println("Getting a backup value from a randomly seeded local instance");
 		
 		backupCalls++;
+		
+		System.out.println(calls);
 		
 		if (backupCalls > reseedTimeout)
 			setBackupSourceSeed();
@@ -93,17 +121,26 @@ public class RandomSource {
 		backupSource.setSeed(removedSeed);
 		
 	}
+	
+	public static void incCalls()
+	{
+		calls++;
+	}
 
 	public static double nextDouble() {
-		calls++;
+		incCalls();
 		
-//		try {
+		try {
 //			return ((double)ig.generate(0, 1000000000-1, 1).get(0)) / 1000000000;
-//		} 
-//		catch (IOException e) {
+			
+			getMoreRandomsForTheQueue();
+			
+			return (double)(queuedRandoms.remove(0)) / (double)(1000000000);
+		} 
+		catch (IOException e) {
 			incrementBackupCalls();
 			return backupSource.nextDouble();
-//		}
+		}
 	}
 
 	public static double random() {
@@ -122,7 +159,7 @@ public class RandomSource {
 		try {
 			ArrayList<Integer> lengthAndTimeout = ig.generate(2, 1000, 2);
 			int length = lengthAndTimeout.remove(0);
-			reseedTimeout = lengthAndTimeout.remove(0)/3;
+			reseedTimeout = lengthAndTimeout.remove(0);
 			
 			backupSeeds = ig.generate(0, 1000000000, length);
 		}
@@ -143,6 +180,7 @@ public class RandomSource {
 
 	public static long pickSeed() {
 		// this will never do anything as we don't really have seeds
+		seed(27);
 		return 27;
 	}
 
