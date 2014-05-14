@@ -1,0 +1,411 @@
+﻿--Pokemon Base Stats & Types--
+NUM|NAME      |TYPE             |  HP| ATK| DEF| SPE|SATK|SDEF|ABILITY1    |ABILITY2    |ITEM
+  1|BULBASAUR |GRASS/POISON     |  46|  61|  56|  83|  27|  45|OVERGROW    |-------     |
+  2|IVYSAUR   |GRASS/POISON     | 116|  73|  55|  52|  35|  75|OVERGROW    |-------     |
+  3|VENUSAUR  |GRASS/POISON     |  30|  78|  26| 148| 224|  19|OVERGROW    |-------     |
+  4|CHARMANDER|FIRE             |  71|  24|  81|  40|  14|  79|BLAZE       |-------     |
+  5|CHARMELEON|FIRE             |  21|  75|  66| 103|  57|  82|BLAZE       |-------     |
+  6|CHARIZARD |FIRE/FLYING      |  57|  25| 136|  78| 118| 120|BLAZE       |-------     |
+  7|SQUIRTLE  |WATER            |  45|  22|  85|  99|  45|  18|TORRENT     |-------     |
+  8|WARTORTLE |WATER            |  88|  62|  63|  20|  70| 102|TORRENT     |-------     |
+  9|BLASTOISE |WATER            | 117| 173|  38|  11|  55| 136|TORRENT     |-------     |
+ 10|CATERPIE  |BUG              |  45|  34|  19|  49|  21|  26|SHIELD DUST |-------     |
+ 11|METAPOD   |BUG              |  37|  11|  34|  38|  43|  42|SHED SKIN   |-------     |
+ 12|BUTTERFREE|BUG/FLYING       |  80|  15|  12|  86|  17| 174|COMPOUNDEYES|-------     |SILVERPOWDER (rare)
+ 13|WEEDLE    |BUG/POISON       |  42|  21|  59|  42|  12|  19|SHIELD DUST |-------     |
+ 14|KAKUNA    |BUG/POISON       |  32|  35|  37|  36|  35|  31|SHED SKIN   |-------     |
+ 15|BEEDRILL  |BUG/POISON       |  45|  70| 114|  91|  17|  47|SWARM       |-------     |POISON BARB (rare)
+ 16|PIDGEY    |NORMAL/FLYING    |  68|  45|  53|  32|  13|  40|KEEN EYE    |-------     |
+ 17|PIDGEOTTO |NORMAL/FLYING    |  74|  32|  55|  90|  11|  87|KEEN EYE    |-------     |
+ 18|PIDGEOT   |NORMAL/FLYING    | 157|  37|  80|  61|  58|  76|KEEN EYE    |-------     |
+ 19|RATTATA   |NORMAL           |  72|  36|  35|  50|  38|  22|RUN AWAY    |GUTS        |
+ 20|RATICATE  |NORMAL           |  58|  25| 109| 113|  37|  72|RUN AWAY    |GUTS        |ORAN BERRY (common), SITRUS BERRY (rare)
+ 21|SPEAROW   |NORMAL/FLYING    |  27|  68|  37|  33|  33|  64|KEEN EYE    |-------     |
+ 22|FEAROW    |NORMAL/FLYING    |  69|  96|  63|  71|  70|  73|KEEN EYE    |-------     |SHARP BEAK (rare)
+ 23|EKANS     |POISON           |  34|  19|  37|  51|  88|  59|INTIMIDATE  |SHED SKIN   |
+ 24|ARBOK     |POISON           |  54|  45| 110|  88|  27| 115|INTIMIDATE  |SHED SKIN   |POISON BARB (rare)
+ 25|PIKACHU   |ELECTRIC         | 127|  21|  21|  29|  27|  74|STATIC      |-------     |
+ 26|RAICHU    |ELECTRIC         |  62| 111| 114|  66|  30|  92|STATIC      |-------     |
+ 27|SANDSHREW |GROUND           |  38|  45|  29|  20|  82|  85|SAND VEIL   |-------     |
+ 28|SANDSLASH |GROUND           |  61|  89|  68|  58| 106|  68|SAND VEIL   |-------     |SOFT SAND (rare)
+ 29|NIDORAN♀  |POISON           |  43|  74|  58|  64|  20|  16|POISON POINT|-------     |
+ 30|NIDORINA  |POISON           |  87|  18|  55|  46|  71|  89|POISON POINT|-------     |
+ 31|NIDOQUEEN |POISON/GROUND    |  64| 142| 156|  13|  90|  29|POISON POINT|-------     |
+ 32|NIDORAN♂  |POISON           |  66|  41|  30|  34|  67|  35|POISON POINT|-------     |
+ 33|NIDORINO  |POISON           |  70|  86|  87|  67|  34|  22|POISON POINT|-------     |
+ 34|NIDOKING  |POISON/GROUND    | 138|  82|  28| 137|  38|  72|POISON POINT|-------     |
+ 35|CLEFAIRY  |NORMAL           |  80|  46|  76|  73|  30|  18|CUTE CHARM  |-------     |MOON STONE (rare)
+ 36|CLEFABLE  |NORMAL           |  46|  84|  46|  16| 121| 160|CUTE CHARM  |-------     |MOON STONE (rare)
+ 37|VULPIX    |FIRE             |  49|  35|  43|  15|  91|  67|FLASH FIRE  |-------     |RAWST BERRY (common)
+ 38|NINETALES |FIRE             |  33| 163|  27| 135| 111|  36|FLASH FIRE  |-------     |RAWST BERRY (common)
+ 39|JIGGLYPUFF|NORMAL           |  72|  75|  48|  22|  43|  11|CUTE CHARM  |-------     |ORAN BERRY (common)
+ 40|WIGGLYTUFF|NORMAL           |  55|  81|  96|  27| 114|  52|CUTE CHARM  |-------     |ORAN BERRY (common)
+ 41|ZUBAT     |POISON/FLYING    |  64|  11|  25|  40|  52|  53|INNER FOCUS |-------     |
+ 42|GOLBAT    |POISON/FLYING    |  27|  97| 106|  56|  84|  85|INNER FOCUS |-------     |
+ 43|ODDISH    |GRASS/POISON     |  85|  51|  18|  61|  25|  80|CHLOROPHYLL |-------     |
+ 44|GLOOM     |GRASS/POISON     |  61|  57|  70|  53|  88|  66|CHLOROPHYLL |-------     |
+ 45|VILEPLUME |GRASS/POISON     |  68| 120| 100|  57|  44|  91|CHLOROPHYLL |-------     |
+ 46|PARAS     |BUG/GRASS        | 106|  20|  30|  13|  66|  50|EFFECT SPORE|-------     |TINYMUSHROOM (common), BIG MUSHROOM (rare)
+ 47|PARASECT  |BUG/GRASS        |  51|  31|  98|  31| 135|  59|EFFECT SPORE|-------     |TINYMUSHROOM (common), BIG MUSHROOM (rare)
+ 48|VENONAT   |BUG/POISON       |  73|  26|  52|  28| 110|  16|COMPOUNDEYES|-------     |
+ 49|VENOMOTH  |BUG/POISON       |  47|  95|  14| 100| 107|  87|SHIELD DUST |-------     |SILVERPOWDER (rare)
+ 50|DIGLETT   |GROUND           |  39|  57|  54|  32|  20|  64|SAND VEIL   |ARENA TRAP  |
+ 51|DUGTRIO   |GROUND           |  47|  34|  77|  92|  76|  79|SAND VEIL   |ARENA TRAP  |
+ 52|MEOWTH    |NORMAL           |  56|  48|  47|  30|  88|  21|PICKUP      |-------     |NUGGET (rare)
+ 53|PERSIAN   |NORMAL           | 121|  30|  26|  50| 193|  21|LIMBER      |-------     |
+ 54|PSYDUCK   |WATER            |  62|  38|  59|  64|  51|  46|DAMP        |CLOUD NINE  |
+ 55|GOLDUCK   |WATER            | 123|  14| 117|  96| 117|  33|DAMP        |CLOUD NINE  |
+ 56|MANKEY    |FIGHTING         |  59|  42|  33|  67|  74|  30|VITAL SPIRIT|-------     |
+ 57|PRIMEAPE  |FIGHTING         |  78|  54|  74| 179|  48|  22|VITAL SPIRIT|-------     |
+ 58|GROWLITHE |FIRE             |  71|  81|  52|  75|  17|  54|INTIMIDATE  |FLASH FIRE  |RAWST BERRY (common)
+ 59|ARCANINE  |FIRE             | 178|  39| 125| 170|  30|  13|INTIMIDATE  |FLASH FIRE  |RAWST BERRY (common)
+ 60|POLIWAG   |WATER            |  40| 112|  11|  11|  40|  86|WATER ABSORB|DAMP        |
+ 61|POLIWHIRL |WATER            |  70|  85| 103|  44|  42|  42|WATER ABSORB|DAMP        |
+ 62|POLIWRATH |WATER/FIGHTING   |  90|  43| 125|  77| 116|  50|WATER ABSORB|DAMP        |
+ 63|ABRA      |PSYCHIC          |  46|  69|  41|  39|  89|  27|SYNCHRONIZE |INNER FOCUS |TWISTEDSPOON (rare)
+ 64|KADABRA   |PSYCHIC          |  92|  47| 116|  32|  96|  16|SYNCHRONIZE |INNER FOCUS |TWISTEDSPOON (rare)
+ 65|ALAKAZAM  |PSYCHIC          | 156|  21|  70|  57| 144|  41|SYNCHRONIZE |INNER FOCUS |TWISTEDSPOON (rare)
+ 66|MACHOP    |FIGHTING         |  90|  55|  64|  69|  12|  15|GUTS        |-------     |
+ 67|MACHOKE   |FIGHTING         |  85| 179|  15|  66|  24|  36|GUTS        |-------     |FOCUS BAND (rare)
+ 68|MACHAMP   |FIGHTING         |  90|  56|  84| 133|  50|  92|GUTS        |-------     |FOCUS BAND (rare)
+ 69|BELLSPROUT|GRASS/POISON     |  57|  96|  45|  22|  29|  52|CHLOROPHYLL |-------     |
+ 70|WEEPINBELL|GRASS/POISON     |  38|  20|  79| 125|  22| 106|CHLOROPHYLL |-------     |
+ 71|VICTREEBEL|GRASS/POISON     |  94| 105|  92|  87|  69|  32|CHLOROPHYLL |-------     |
+ 72|TENTACOOL |WATER/POISON     |  37|  24|  89|  64|  52|  69|CLEAR BODY  |LIQUID OOZE |
+ 73|TENTACRUEL|WATER/POISON     |  83|  25| 117| 128| 126|  35|CLEAR BODY  |LIQUID OOZE |
+ 74|GEODUDE   |ROCK/GROUND      |  68|  54|  29|  54|  42|  53|ROCK HEAD   |STURDY      |
+ 75|GRAVELER  |ROCK/GROUND      |  81|  83|  50|  87|  26|  63|ROCK HEAD   |STURDY      |HARD STONE (rare)
+ 76|GOLEM     |ROCK/GROUND      |  90|  87| 182|  13|  42|  71|ROCK HEAD   |STURDY      |HARD STONE (rare)
+ 77|PONYTA    |FIRE             |  31| 103|  64|  44|  80|  87|RUN AWAY    |FLASH FIRE  |
+ 78|RAPIDASH  |FIRE             |  49| 125| 188|  52|  65|  21|RUN AWAY    |FLASH FIRE  |
+ 79|SLOWPOKE  |WATER/PSYCHIC    |  80|  63|  43|  41|  42|  47|OBLIVIOUS   |OWN TEMPO   |
+ 80|SLOWBRO   |WATER/PSYCHIC    |  44| 106| 106|  66|  32| 135|OBLIVIOUS   |OWN TEMPO   |
+ 81|MAGNEMITE |ELECTRIC/STEEL   |  76|  58|  61|  56|  54|  21|MAGNET PULL |STURDY      |
+ 82|MAGNETON  |ELECTRIC/STEEL   |  77|  22|  98|  96|  97|  75|MAGNET PULL |STURDY      |MAGNET (rare)
+ 83|FARFETCH’D|NORMAL/FLYING    |  25|  51|  87|  85|  33|  71|KEEN EYE    |INNER FOCUS |STICK (rare)
+ 84|DODUO     |NORMAL/FLYING    |  76|  14|  37|  67|  58|  58|RUN AWAY    |EARLY BIRD  |
+ 85|DODRIO    |NORMAL/FLYING    |  25|  31|  58|  44| 196| 105|RUN AWAY    |EARLY BIRD  |SHARP BEAK (rare)
+ 86|SEEL      |WATER            |  46|  66|  62|  59|  48|  44|THICK FAT   |-------     |ASPEAR BERRY (common)
+ 87|DEWGONG   |WATER/ICE        | 101| 113|  84|  15|  73|  89|THICK FAT   |-------     |ASPEAR BERRY (common), NEVERMELTICE (rare)
+ 88|GRIMER    |POISON           |  37|  58|  69|  51|  71|  38|STENCH      |STICKY HOLD |
+ 89|MUK       |POISON           |  48| 110|  71|  53| 122|  97|STENCH      |STICKY HOLD |
+ 90|SHELLDER  |WATER            |  30|  73|  74|  47|  25|  56|SHELL ARMOR |-------     |PEARL (common), BIG PEARL (rare)
+ 91|CLOYSTER  |WATER/ICE        |  51| 155|  56|  20| 101| 143|SHELL ARMOR |-------     |PEARL (common), BIG PEARL (rare)
+ 92|GASTLY    |GHOST/POISON     |  63|  34|  33|  33|  79|  68|LEVITATE    |-------     |
+ 93|HAUNTER   |GHOST/POISON     | 123|  60|  87|  66|  37|  32|LEVITATE    |-------     |SPELL TAG (rare)
+ 94|GENGAR    |GHOST/POISON     | 137|  14|  76|  23| 117| 133|LEVITATE    |-------     |SPELL TAG (rare)
+ 95|ONIX      |ROCK/GROUND      |  69|  42| 136|  41|  44|  53|ROCK HEAD   |STURDY      |HARD STONE (rare)
+ 96|DROWZEE   |PSYCHIC          |  51|  60|  69|  53|  24|  71|INSOMNIA    |-------     |
+ 97|HYPNO     |PSYCHIC          |  65| 111|  72|  44|  86| 105|INSOMNIA    |-------     |
+ 98|KRABBY    |WATER            |  39|  70|  76|  36|  62|  42|HYPER CUTTER|SHELL ARMOR |
+ 99|KINGLER   |WATER            |  89|  13|  69| 138|  62| 104|HYPER CUTTER|SHELL ARMOR |
+100|VOLTORB   |ELECTRIC         |  47|  87|  26|  80|  69|  22|SOUNDPROOF  |STATIC      |
+101|ELECTRODE |ELECTRIC         |  26|  87|  69|  28| 142| 128|SOUNDPROOF  |STATIC      |
+102|EXEGGCUTE |GRASS/PSYCHIC    |  44|  74|  34|  38|  73|  62|CHLOROPHYLL |-------     |
+103|EXEGGUTOR |GRASS/PSYCHIC    | 118|  89| 132|  60|  77|  44|CHLOROPHYLL |-------     |
+104|CUBONE    |GROUND           | 109|  29|  33|  58|  35|  56|ROCK HEAD   |LIGHTNINGROD|THICK CLUB (rare)
+105|MAROWAK   |GROUND           |  42|  31|  87|  90|  83|  91|ROCK HEAD   |LIGHTNINGROD|THICK CLUB (rare)
+106|HITMONLEE |FIGHTING         | 119| 110|  12|  75|  82|  57|LIMBER      |-------     |
+107|HITMONCHAN|FIGHTING         |  45|  51|  80| 129|  48| 102|KEEN EYE    |-------     |
+108|LICKITUNG |NORMAL           |  44|  81|  45| 104|  70|  40|OWN TEMPO   |OBLIVIOUS   |
+109|KOFFING   |POISON           |  51|  37|  82|  22|  52|  97|LEVITATE    |-------     |
+110|WEEZING   |POISON           |  22| 154| 182|  34|  31|  68|LEVITATE    |-------     |
+111|RHYHORN   |GROUND/ROCK      |  53|  13|  27|  85|  83|  84|LIGHTNINGROD|ROCK HEAD   |
+112|RHYDON    |GROUND/ROCK      |  61|  99| 108|  45|  39| 133|LIGHTNINGROD|ROCK HEAD   |
+113|CHANSEY   |NORMAL           |  69|  66|  42|  84| 154|  35|NATURAL CURE|SERENE GRACE|LUCKY EGG (rare)
+114|TANGELA   |GRASS            |  37|  76|  40|  90| 100|  91|CHLOROPHYLL |-------     |
+115|KANGASKHAN|NORMAL           |  31|  58| 108|  47| 114| 131|EARLY BIRD  |-------     |
+116|HORSEA    |WATER            |  36|  94|  36|  68|  49|  13|SWIFT SWIM  |-------     |
+117|SEADRA    |WATER            |  49|  30|  71|  45| 124| 121|POISON POINT|-------     |
+118|GOLDEEN   |WATER            |  68|  57|  53|  65|  32|  44|SWIFT SWIM  |WATER VEIL  |
+119|SEAKING   |WATER            |  88|  98| 100|  11|  77|  76|SWIFT SWIM  |WATER VEIL  |
+120|STARYU    |WATER            |  59|  65|  76|  65|  25|  50|ILLUMINATE  |NATURAL CURE|STARDUST (common), STAR PIECE (rare)
+121|STARMIE   |WATER/PSYCHIC    | 169|  49|  24|  22|  93| 164|ILLUMINATE  |NATURAL CURE|STARDUST (common), STAR PIECE (rare)
+122|MR. MIME  |PSYCHIC          |  21| 118| 115|  55|  81|  71|SOUNDPROOF  |-------     |
+123|SCYTHER   |BUG/FLYING       |  26| 122|  58| 106|  50| 138|SWARM       |-------     |
+124|JYNX      |ICE/PSYCHIC      |  76|  50|  76| 106|  38| 109|OBLIVIOUS   |-------     |
+125|ELECTABUZZ|ELECTRIC         |  97|  47|  40|  94|  91| 122|STATIC      |-------     |
+126|MAGMAR    |FIRE             | 113| 142| 142|  47|  16|  35|FLAME BODY  |-------     |
+127|PINSIR    |BUG              | 180| 103| 135|  18|  18|  47|HYPER CUTTER|-------     |
+128|TAUROS    |NORMAL           | 144|  61|  21|  66|  67| 131|INTIMIDATE  |-------     |
+129|MAGIKARP  |WATER            |  24|  29|  43|  60|  28|  16|SWIFT SWIM  |-------     |
+130|GYARADOS  |WATER/FLYING     |  80| 118| 112|  37| 114|  79|INTIMIDATE  |-------     |
+131|LAPRAS    |WATER/ICE        | 209|  55|  12|  36|  86| 137|WATER ABSORB|SHELL ARMOR |
+132|DITTO     |NORMAL           |  76|  40|  47|  23|  50|  52|LIMBER      |-------     |METAL POWDER (rare)
+133|EEVEE     |NORMAL           | 133|  62|  12|  73|  25|  20|RUN AWAY    |-------     |
+134|VAPOREON  |WATER            |  36| 131|  56|  97| 113|  92|WATER ABSORB|-------     |
+135|JOLTEON   |ELECTRIC         |  53|  71| 113|  30| 136| 122|VOLT ABSORB |-------     |
+136|FLAREON   |FIRE             | 106|  94|  81| 106|  83|  55|FLASH FIRE  |-------     |
+137|PORYGON   |NORMAL           | 114|  86|  67|  27|  31|  70|TRACE       |-------     |
+138|OMANYTE   |ROCK/WATER       | 135|  46|  13|  11| 132|  18|SWIFT SWIM  |SHELL ARMOR |
+139|OMASTAR   |ROCK/WATER       | 120|  52|  16|  99| 110|  97|SWIFT SWIM  |SHELL ARMOR |
+140|KABUTO    |ROCK/WATER       | 111|  50|  79|  77|  26|  12|SWIFT SWIM  |BATTLE ARMOR|
+141|KABUTOPS  |ROCK/WATER       | 122|  20|  67|  50| 117| 118|SWIFT SWIM  |BATTLE ARMOR|
+142|AERODACTYL|ROCK/FLYING      |  75| 126|  76| 108|  74|  56|ROCK HEAD   |PRESSURE    |
+143|SNORLAX   |NORMAL           |  75|  81| 145| 102| 126|  11|IMMUNITY    |THICK FAT   |CHESTO BERRY (100%)
+144|ARTICUNO  |ICE/FLYING       |  24| 147| 171|  47|  88| 104|PRESSURE    |-------     |
+145|ZAPDOS    |ELECTRIC/FLYING  | 198| 128| 115|  31|  94|  15|PRESSURE    |-------     |
+146|MOLTRES   |FIRE/FLYING      |  83|  27| 111| 134|  90| 136|PRESSURE    |-------     |
+147|DRATINI   |DRAGON           |  57|  64|  63|  57|  11|  48|SHED SKIN   |-------     |
+148|DRAGONAIR |DRAGON           | 142| 100|  38|  19|  39|  82|SHED SKIN   |-------     |DRAGON FANG (rare)
+149|DRAGONITE |DRAGON/FLYING    | 160|  57| 130| 107| 115|  31|INNER FOCUS |-------     |DRAGON FANG (rare)
+150|MEWTWO    |PSYCHIC          | 152| 140| 185|  15|  33| 156|PRESSURE    |-------     |
+151|MEW       |PSYCHIC          | 131|  85|  79|  89| 118|  97|SYNCHRONIZE |-------     |
+152|CHIKORITA |GRASS            |  28| 110|  32|  52|  77|  19|OVERGROW    |-------     |LUM BERRY (100%)
+153|BAYLEEF   |GRASS            |  77|  82| 103| 103|  19|  21|OVERGROW    |-------     |
+154|MEGANIUM  |GRASS            | 157|  60|  38| 147|  30|  93|OVERGROW    |-------     |
+155|CYNDAQUIL |FIRE             |  67|  42|  65|  64|  13|  58|BLAZE       |-------     |
+156|QUILAVA   |FIRE             | 106|  67|  74|  57|  41|  60|BLAZE       |-------     |
+157|TYPHLOSION|FIRE             |  63|  61|  49| 101| 157| 103|BLAZE       |-------     |
+158|TOTODILE  |WATER            |  37|  32|  41|  94|  31|  78|TORRENT     |-------     |
+159|CROCONAW  |WATER            |  73|  78|  23|  35| 106|  90|TORRENT     |-------     |
+160|FERALIGATR|WATER            | 195|  89|  18|  84|  65|  79|TORRENT     |-------     |
+161|SENTRET   |NORMAL           |  64|  42|  14|  31|  28|  36|RUN AWAY    |KEEN EYE    |ORAN BERRY (rare)
+162|FURRET    |NORMAL           | 117|  28|  48|  43|  21| 158|RUN AWAY    |KEEN EYE    |ORAN BERRY (common), SITRUS BERRY (rare)
+163|HOOTHOOT  |NORMAL/FLYING    |  30|  41|  64|  31|  45|  52|INSOMNIA    |KEEN EYE    |
+164|NOCTOWL   |NORMAL/FLYING    |  52|  78|  35|  12| 187|  77|INSOMNIA    |KEEN EYE    |
+165|LEDYBA    |BUG/FLYING       |  64|  27|  30|  36|  20|  88|SWARM       |EARLY BIRD  |
+166|LEDIAN    |BUG/FLYING       |  97|  29| 104|  62|  69|  28|SWARM       |EARLY BIRD  |
+167|SPINARAK  |BUG/POISON       |  82|  26|  40|  18|  18|  66|SWARM       |INSOMNIA    |
+168|ARIADOS   |BUG/POISON       |  54|  65|  39| 168|  25|  40|SWARM       |INSOMNIA    |
+169|CROBAT    |POISON/FLYING    | 114|  46|  79| 148| 108|  40|INNER FOCUS |-------     |
+170|CHINCHOU  |WATER/ELECTRIC   |  47|  12| 105| 101|  47|  19|VOLT ABSORB |ILLUMINATE  |YELLOW SHARD (rare)
+171|LANTURN   |WATER/ELECTRIC   |  45| 105|  55|  49| 113|  92|VOLT ABSORB |ILLUMINATE  |YELLOW SHARD (rare)
+172|PICHU     |ELECTRIC         |  38|  23|  39|  27|  41|  36|STATIC      |-------     |
+173|CLEFFA    |NORMAL           |  53|  21|  40|  46|  14|  44|CUTE CHARM  |-------     |MOON STONE (rare)
+174|IGGLYBUFF |NORMAL           |  35|  24|  29|  42|  24|  56|CUTE CHARM  |-------     |ORAN BERRY (common)
+175|TOGEPI    |NORMAL           |  37|  64|  25|  16|  48|  55|HUSTLE      |SERENE GRACE|
+176|TOGETIC   |NORMAL/FLYING    |  83| 178|  17|  12|  12| 102|HUSTLE      |SERENE GRACE|
+177|NATU      |PSYCHIC/FLYING   |  25|  78|  54|  48|  28|  87|SYNCHRONIZE |EARLY BIRD  |
+178|XATU      |PSYCHIC/FLYING   |  98|  88|  61|  47|  90|  86|SYNCHRONIZE |EARLY BIRD  |
+179|MAREEP    |ELECTRIC         |  68|  41|  59|  18|  56|  39|STATIC      |-------     |
+180|FLAAFFY   |ELECTRIC         |  95|  50|  79|  46|  36|  59|STATIC      |-------     |
+181|AMPHAROS  |ELECTRIC         |  32| 108|  75|  21| 111| 153|STATIC      |-------     |
+182|BELLOSSOM |GRASS            | 106|  85|  97|  58|  96|  37|CHLOROPHYLL |-------     |
+183|MARILL    |WATER            |  46|  68|  36|  24|  34|  42|THICK FAT   |HUGE POWER  |
+184|AZUMARILL |WATER            | 110|  68| 101|  54|  66|  11|THICK FAT   |HUGE POWER  |
+185|SUDOWOODO |ROCK             |  76|  99|  70|  24| 126|  16|STURDY      |ROCK HEAD   |
+186|POLITOED  |WATER            | 138|  32|  95| 132|  80|  22|WATER ABSORB|DAMP        |KING’S ROCK (rare)
+187|HOPPIP    |GRASS/FLYING     |  33|  37|  12|  35|  70|  63|CHLOROPHYLL |-------     |
+188|SKIPLOOM  |GRASS/FLYING     |  34|  42|  94|  63|  94|  13|CHLOROPHYLL |-------     |
+189|JUMPLUFF  |GRASS/FLYING     |  76| 125| 100|  48|  65|  35|CHLOROPHYLL |-------     |
+190|AIPOM     |NORMAL           |  93|  70|  77|  13|  27|  79|RUN AWAY    |PICKUP      |
+191|SUNKERN   |GRASS            |  46|  18|  13|  14|  44|  45|CHLOROPHYLL |-------     |
+192|SUNFLORA  |GRASS            |  81|  47|  80|  24| 174|  20|CHLOROPHYLL |-------     |
+193|YANMA     |BUG/FLYING       |  82| 111| 107|  19|  47|  24|SPEED BOOST |COMPOUNDEYES|
+194|WOOPER    |WATER/GROUND     |  33|  44|  45|  37|  12|  39|DAMP        |WATER ABSORB|
+195|QUAGSIRE  |WATER/GROUND     | 114| 105|  14|  72|  61|  63|DAMP        |WATER ABSORB|
+196|ESPEON    |PSYCHIC          | 110| 140| 144|  12|  67|  52|SYNCHRONIZE |-------     |
+197|UMBREON   |DARK             |  78|  23|  80| 128|  71| 145|SYNCHRONIZE |-------     |
+198|MURKROW   |DARK/FLYING      | 102|  73|  31|  82|  61|  56|INSOMNIA    |-------     |
+199|SLOWKING  |WATER/PSYCHIC    | 127|  87|  13| 129|  11| 123|OBLIVIOUS   |OWN TEMPO   |KING’S ROCK (rare)
+200|MISDREAVUS|GHOST            | 100|  64| 104|  91|  49|  28|LEVITATE    |-------     |SPELL TAG (rare)
+201|UNOWN     |PSYCHIC          |  86|  39|  24|  94|  70|  22|LEVITATE    |-------     |
+202|WOBBUFFET |PSYCHIC          |  63|  86|  40| 158|  16|  42|SHADOW TAG  |-------     |
+203|GIRAFARIG |NORMAL/PSYCHIC   | 132|  99| 125|  26|  22|  50|INNER FOCUS |EARLY BIRD  |PERSIM BERRY (rare)
+204|PINECO    |BUG              |  40|  55|  45|  12|  67|  70|STURDY      |-------     |
+205|FORRETRESS|BUG/STEEL        |  54| 156|  66|  71|  54|  63|STURDY      |-------     |
+206|DUNSPARCE |NORMAL           |  99|  90|  18|  36|  78|  93|SERENE GRACE|RUN AWAY    |
+207|GLIGAR    |GROUND/FLYING    |  59| 122|  12|  64| 134|  40|HYPER CUTTER|SAND VEIL   |
+208|STEELIX   |STEEL/GROUND     |  93|  69| 154|  90|  83|  20|ROCK HEAD   |STURDY      |METAL COAT (rare)
+209|SNUBBULL  |NORMAL           |  76|  54|  41|  74|  35|  20|INTIMIDATE  |RUN AWAY    |
+210|GRANBULL  |NORMAL           |  65|  23| 109|  77| 111|  65|INTIMIDATE  |INTIMIDATE  |
+211|QWILFISH  |WATER/POISON     |  57| 104|  69|  14|  74| 112|POISON POINT|SWIFT SWIM  |
+212|SCIZOR    |BUG/STEEL        | 180|  29|  92| 155|  34|  11|SWARM       |-------     |
+213|SHUCKLE   |BUG/ROCK         |  58|  41|  87|  71| 110| 138|STURDY      |-------     |BERRY JUICE (100%)
+214|HERACROSS |BUG/FIGHTING     |  29|  63|  25| 158| 124| 100|SWARM       |GUTS        |
+215|SNEASEL   |DARK/ICE         |  70|  20|  92| 113|  15| 120|INNER FOCUS |KEEN EYE    |
+216|TEDDIURSA |NORMAL           |  44|  77|  30|  25|  69|  85|PICKUP      |-------     |ORAN BERRY (common), SITRUS BERRY (rare)
+217|URSARING  |NORMAL           | 176|  45|  34|  80|  44| 121|GUTS        |-------     |ORAN BERRY (common), SITRUS BERRY (rare)
+218|SLUGMA    |FIRE             |  33|  27|  49|  53|  47|  41|MAGMA ARMOR |FLAME BODY  |
+219|MAGCARGO  |FIRE/ROCK        |  55| 131|  67|  60|  54|  43|MAGMA ARMOR |FLAME BODY  |
+220|SWINUB    |ICE/GROUND       |  74|  29|  46|  18|  66|  18|OBLIVIOUS   |-------     |ASPEAR BERRY (common)
+221|PILOSWINE |ICE/GROUND       | 104|  76| 124|  80|  56|  11|OBLIVIOUS   |-------     |ASPEAR BERRY (common), NEVERMELTICE (rare)
+222|CORSOLA   |WATER/ROCK       | 146|  36|  53|  39|  77|  30|HUSTLE      |NATURAL CURE|RED SHARD (rare)
+223|REMORAID  |WATER            |  69|  25|  43|  39|  51|  72|HUSTLE      |-------     |
+224|OCTILLERY |WATER            |  33|  35| 128| 123|  54| 106|SUCTION CUPS|-------     |
+225|DELIBIRD  |ICE/FLYING       |  60|  83|  12|  18| 100|  58|VITAL SPIRIT|HUSTLE      |
+226|MANTINE   |WATER/FLYING     |  88|  20| 154| 102|  28|  74|SWIFT SWIM  |WATER ABSORB|
+227|SKARMORY  |STEEL/FLYING     |  68|  47|  81|  86| 129|  54|KEEN EYE    |STURDY      |SHARP BEAK (rare)
+228|HOUNDOUR  |DARK/FIRE        |  59|  11| 103|  16|  85|  58|EARLY BIRD  |FLASH FIRE  |
+229|HOUNDOOM  |DARK/FIRE        | 108|  50| 108| 111| 107|  15|EARLY BIRD  |FLASH FIRE  |
+230|KINGDRA   |WATER/DRAGON     | 143| 126|  29| 114|  83|  44|SWIFT SWIM  |-------     |DRAGON SCALE (rare)
+231|PHANPY    |GROUND           |  81|  68|  22|  50|  42|  67|PICKUP      |-------     |
+232|DONPHAN   |GROUND           |  43|  43|  42|  59| 151| 162|STURDY      |-------     |
+233|PORYGON2  |NORMAL           |  64| 166|  82|  43|  60| 100|TRACE       |-------     |UP-GRADE (100%)
+234|STANTLER  |NORMAL           |  65|  41|  79|  82|  98| 100|INTIMIDATE  |-------     |
+235|SMEARGLE  |NORMAL           |  56|  34|  56|  25|  19|  60|OWN TEMPO   |-------     |
+236|TYROGUE   |FIGHTING         |  46|  39|  18|  19|  45|  43|GUTS        |-------     |
+237|HITMONTOP |FIGHTING         |  99|  54| 100|  96|  37|  69|INTIMIDATE  |-------     |
+238|SMOOCHUM  |ICE/PSYCHIC      |  44|  43|  45|  55|  62|  56|OBLIVIOUS   |-------     |
+239|ELEKID    |ELECTRIC         |  53|  23|  66|  56|  70|  92|STATIC      |-------     |
+240|MAGBY     |FIRE             |  96|  67|  85|  29|  29|  58|FLAME BODY  |-------     |
+241|MILTANK   |NORMAL           | 111|  91| 100|  52|  15| 122|THICK FAT   |-------     |MOOMOO MILK (100%)
+242|BLISSEY   |NORMAL           | 126|  30| 104| 142|  51|  87|NATURAL CURE|SERENE GRACE|LUCKY EGG (rare)
+243|RAIKOU    |ELECTRIC         | 136| 114|  35| 122|  86|  88|PRESSURE    |-------     |
+244|ENTEI     |FIRE             |  38|  61|  82|  51| 160| 188|PRESSURE    |-------     |
+245|SUICUNE   |WATER            | 124| 123| 120|  91| 100|  22|PRESSURE    |-------     |
+246|LARVITAR  |ROCK/GROUND      |  66|  63|  34|  19|  55|  63|GUTS        |-------     |
+247|PUPITAR   |ROCK/GROUND      |  56| 143|  21|  33| 121|  35|SHED SKIN   |-------     |
+248|TYRANITAR |ROCK/DARK        | 153| 122|  47|  13| 120| 146|SAND STREAM |-------     |
+249|LUGIA     |PSYCHIC/FLYING   | 131| 148| 104|  62| 109| 127|PRESSURE    |-------     |
+250|HO-OH     |FIRE/FLYING      |  81| 162| 102|  54| 120| 160|PRESSURE    |-------     |
+251|CELEBI    |PSYCHIC/GRASS    | 170|  27| 187|  72|  58|  85|NATURAL CURE|-------     |LUM BERRY (100%)
+252|TREECKO   |GRASS            |  69|  61|  30|  49|  35|  67|OVERGROW    |-------     |
+253|GROVYLE   |GRASS            |  81|  88| 130|  62|  20|  24|OVERGROW    |-------     |
+254|SCEPTILE  |GRASS            |  56| 101| 187|  84|  42|  60|OVERGROW    |-------     |
+255|TORCHIC   |FIRE             |  64|  55|  20|  50|  72|  49|BLAZE       |-------     |
+256|COMBUSKEN |FIRE/FIGHTING    |  49| 122|  44|  35| 122|  33|BLAZE       |-------     |
+257|BLAZIKEN  |FIRE/FIGHTING    |  93|  25| 132| 154|  16| 110|BLAZE       |-------     |
+258|MUDKIP    |WATER            |  48|  60|  58|  20|  63|  62|TORRENT     |-------     |
+259|MARSHTOMP |WATER/GROUND     |  98| 108|  22|  54|  24|  98|TORRENT     |-------     |
+260|SWAMPERT  |WATER/GROUND     | 132|  51|  68| 125|  89|  69|TORRENT     |-------     |
+261|POOCHYENA |DARK             |  31|  42|  33|  11|  81|  23|RUN AWAY    |-------     |PECHA BERRY (rare)
+262|MIGHTYENA |DARK             |  88|  95|  36|  59|  56|  85|INTIMIDATE  |-------     |PECHA BERRY (rare)
+263|ZIGZAGOON |NORMAL           |  56|  38|  40|  32|  19|  55|PICKUP      |-------     |ORAN BERRY (rare)
+264|LINOONE   |NORMAL           |  52|  90|  34|  92|  93|  59|PICKUP      |-------     |ORAN BERRY (common), SITRUS BERRY (rare)
+265|WURMPLE   |BUG              |  53|  22|  42|  18|  19|  40|SHIELD DUST |-------     |
+266|SILCOON   |BUG              |  42|  39|  34|  14|  43|  33|SHED SKIN   |-------     |
+267|BEAUTIFLY |BUG/FLYING       |  62|  66|  40|  81|  69|  67|SWARM       |-------     |SILVERPOWDER (rare)
+268|CASCOON   |BUG              |  48|  42|  42|  34|  23|  17|SHED SKIN   |-------     |
+269|DUSTOX    |BUG/POISON       |  62|  65|  85|  80|  30|  63|SHIELD DUST |-------     |SILVERPOWDER (rare)
+270|LOTAD     |WATER/GRASS      |  43|  25|  44|  46|  12|  50|SWIFT SWIM  |RAIN DISH   |
+271|LOMBRE    |WATER/GRASS      |  54|  59|  87|  43|  41|  56|SWIFT SWIM  |RAIN DISH   |
+272|LUDICOLO  |WATER/GRASS      |  97|  57|  92|  86|  54|  93|SWIFT SWIM  |RAIN DISH   |
+273|SEEDOT    |GRASS            |  46|  43|  14|  33|  42|  42|CHLOROPHYLL |EARLY BIRD  |
+274|NUZLEAF   |GRASS/DARK       |  64|  26|  79|  21|  77|  73|CHLOROPHYLL |EARLY BIRD  |
+275|SHIFTRY   |GRASS/DARK       |  81|  49|  26| 111|  81| 132|CHLOROPHYLL |EARLY BIRD  |
+276|TAILLOW   |NORMAL/FLYING    |  62|  84|  17|  29|  36|  42|GUTS        |-------     |
+277|SWELLOW   |NORMAL/FLYING    |  77| 150|  14|  95|  46|  48|GUTS        |-------     |
+278|WINGULL   |WATER/FLYING     |  39|  54|  47|  24|  56|  51|KEEN EYE    |-------     |
+279|PELIPPER  |WATER/FLYING     |  24| 100|  69|  41|  91| 104|KEEN EYE    |-------     |
+280|RALTS     |PSYCHIC          |  23|  29|  45|  47|  26|  28|SYNCHRONIZE |TRACE       |
+281|KIRLIA    |PSYCHIC          |  45|  43|  19|  63|  46|  62|SYNCHRONIZE |TRACE       |
+282|GARDEVOIR |PSYCHIC          |  31| 153|  82|  23| 110| 118|SYNCHRONIZE |TRACE       |
+283|SURSKIT   |BUG/WATER        |  51|  59|  78|  14|  55|  12|SWIFT SWIM  |-------     |
+284|MASQUERAIN|BUG/FLYING       | 115| 107|  71|  34|  77|  11|INTIMIDATE  |-------     |SILVERPOWDER (rare)
+285|SHROOMISH |GRASS            |  79|  29|  38|  15|  64|  70|EFFECT SPORE|-------     |
+286|BRELOOM   |GRASS/FIGHTING   |  43|  58| 146|  89|  66|  58|EFFECT SPORE|-------     |
+287|SLAKOTH   |NORMAL           |  65|  75|  34|  25|  45|  35|TRUANT      |-------     |
+288|VIGOROTH  |NORMAL           |  39|  77|  78|  30| 103| 113|VITAL SPIRIT|-------     |
+289|SLAKING   |NORMAL           |  33| 130| 185| 127| 163|  31|TRUANT      |-------     |
+290|NINCADA   |BUG/GROUND       |  55|  57|  54|  13|  25|  62|COMPOUNDEYES|-------     |
+291|NINJASK   |BUG/FLYING       | 112|  87| 100| 107|  28|  22|SPEED BOOST |-------     |
+292|SHEDINJA  |BUG/GHOST        |   1|  96|  19|  63|  24|  33|WONDER GUARD|-------     |
+293|WHISMUR   |NORMAL           |  53|  66|  25|  38|  29|  28|SOUNDPROOF  |-------     |CHESTO BERRY (rare)
+294|LOUDRED   |NORMAL           |  98|  70|  19|  61|  39|  74|SOUNDPROOF  |-------     |CHESTO BERRY (rare)
+295|EXPLOUD   |NORMAL           | 102|  47| 108|  56|  81|  86|SOUNDPROOF  |-------     |CHESTO BERRY (rare)
+296|MAKUHITA  |FIGHTING         |  52|  40|  43|  30|  22|  51|THICK FAT   |GUTS        |
+297|HARIYAMA  |FIGHTING         | 168|  21|  19| 164|  20|  82|THICK FAT   |GUTS        |KING’S ROCK (rare)
+298|AZURILL   |NORMAL           |  43|  32|  23|  28|  38|  26|THICK FAT   |HUGE POWER  |
+299|NOSEPASS  |ROCK             | 109|  89|  57|  53|  47|  20|STURDY      |MAGNET PULL |
+300|SKITTY    |NORMAL           |  70|  41|  30|  40|  31|  48|CUTE CHARM  |-------     |LEPPA BERRY (rare)
+301|DELCATTY  |NORMAL           |  57|  48|  61|  88|  72|  53|CUTE CHARM  |-------     |LEPPA BERRY (rare)
+302|SABLEYE   |DARK/GHOST       |  48| 113|  20|  78|  98|  22|KEEN EYE    |-------     |
+303|MAWILE    |STEEL            |  38|  25| 124|  28| 108|  57|HYPER CUTTER|INTIMIDATE  |
+304|ARON      |STEEL/ROCK       |  57|  14|  63|  87|  93|  15|STURDY      |ROCK HEAD   |HARD STONE (rare)
+305|LAIRON    |STEEL/ROCK       |  78|  31| 123|  19|  41| 139|STURDY      |ROCK HEAD   |HARD STONE (rare)
+306|AGGRON    |STEEL/ROCK       | 133| 131|  85| 109|  12|  60|STURDY      |ROCK HEAD   |HARD STONE (rare)
+307|MEDITITE  |FIGHTING/PSYCHIC |  43|  59|  30|  65|  56|  27|PURE POWER  |-------     |
+308|MEDICHAM  |FIGHTING/PSYCHIC | 106|  53| 131|  55|  18|  47|PURE POWER  |-------     |
+309|ELECTRIKE |ELECTRIC         |  68|  56|  18|  61|  26|  67|STATIC      |LIGHTNINGROD|
+310|MANECTRIC |ELECTRIC         | 125|  33|  82| 114|  53|  68|STATIC      |LIGHTNINGROD|
+311|PLUSLE    |ELECTRIC         | 109|  41| 100| 126|  13|  16|PLUS        |-------     |
+312|MINUN     |ELECTRIC         |  61|  38|  11|  44|  25| 227|MINUS       |-------     |
+313|VOLBEAT   |BUG              | 109|  82|  18|  59|  54|  78|ILLUMINATE  |SWARM       |
+314|ILLUMISE  |BUG              |  89|  58| 100|  33| 105|  15|OBLIVIOUS   |-------     |
+315|ROSELIA   |GRASS/POISON     |  85|  69|  65|  71|  72|  38|NATURAL CURE|POISON POINT|POISON BARB (rare)
+316|GULPIN    |POISON           |  29|  72|  11|  56|  70|  63|LIQUID OOZE |STICKY HOLD |BIG PEARL (rare)
+317|SWALOT    |POISON           |  31|  63|  58|  98| 106| 111|LIQUID OOZE |STICKY HOLD |BIG PEARL (rare)
+318|CARVANHA  |WATER/DARK       |  86|  12|  81|  30|  79|  17|ROUGH SKIN  |-------     |
+319|SHARPEDO  |WATER/DARK       | 105|  40| 115|  19|  59| 123|ROUGH SKIN  |-------     |
+320|WAILMER   |WATER            |  85|  62|  37|  46|  92|  78|WATER VEIL  |OBLIVIOUS   |
+321|WAILORD   |WATER            |  23|  74| 152|  43| 120|  88|WATER VEIL  |OBLIVIOUS   |
+322|NUMEL     |FIRE/GROUND      |  41|  18|  61|  67|  49|  68|OBLIVIOUS   |-------     |RAWST BERRY (100%)
+323|CAMERUPT  |FIRE/GROUND      | 150|  30|  73| 107|  46|  54|MAGMA ARMOR |-------     |RAWST BERRY (100%)
+324|TORKOAL   |FIRE             | 163|  77|  54|  41|  35|  99|WHITE SMOKE |-------     |
+325|SPOINK    |PSYCHIC          |  72|  54|  15|  73|  62|  55|THICK FAT   |OWN TEMPO   |
+326|GRUMPIG   |PSYCHIC          |  21| 120|  29| 107| 164|  29|THICK FAT   |OWN TEMPO   |
+327|SPINDA    |NORMAL           |  80|  24|  55|  62|  85|  54|OWN TEMPO   |-------     |CHESTO BERRY (rare)
+328|TRAPINCH  |GROUND           |  37|  90|  76|  12|  37|  38|HYPER CUTTER|ARENA TRAP  |SOFT SAND (rare)
+329|VIBRAVA   |GROUND/DRAGON    |  84|  33|  78|  75|  58|  12|LEVITATE    |LEVITATE    |
+330|FLYGON    |GROUND/DRAGON    | 101|  90|  46| 101| 104|  78|LEVITATE    |LEVITATE    |
+331|CACNEA    |GRASS            |  81|  25|  52|  63|  40|  75|SAND VEIL   |-------     |POISON BARB (rare)
+332|CACTURNE  |GRASS/DARK       | 112|  87|  50|  96| 104|  25|SAND VEIL   |-------     |POISON BARB (rare)
+333|SWABLU    |NORMAL/FLYING    |  58|  81|  30|  45|  73|  23|NATURAL CURE|-------     |
+334|ALTARIA   |DRAGON/FLYING    | 133|  94|  39| 165|  16|  42|NATURAL CURE|-------     |
+335|ZANGOOSE  |NORMAL           |  73| 111|  19| 103|  44| 107|IMMUNITY    |-------     |
+336|SEVIPER   |POISON           |  24| 154|  84|  40| 103|  54|SHED SKIN   |-------     |
+337|LUNATONE  |ROCK/PSYCHIC     |  92|  38| 104|  18|  99|  88|LEVITATE    |-------     |MOON STONE (rare)
+338|SOLROCK   |ROCK/PSYCHIC     |  27|  58| 121|  68| 103|  63|LEVITATE    |-------     |SUN STONE (rare)
+339|BARBOACH  |WATER/GROUND     |  26|  38|  67|  39|  65|  53|OBLIVIOUS   |-------     |
+340|WHISCASH  |WATER/GROUND     | 111|  28|  70| 118|  72|  68|OBLIVIOUS   |-------     |
+341|CORPHISH  |WATER            |  44|  63|  66|  59|  41|  35|HYPER CUTTER|SHELL ARMOR |
+342|CRAWDAUNT |WATER/DARK       | 156|  68|  21|  73|  64|  87|HYPER CUTTER|SHELL ARMOR |
+343|BALTOY    |GROUND/PSYCHIC   |  22|  37|  39|  61|  68|  73|LEVITATE    |-------     |
+344|CLAYDOL   |GROUND/PSYCHIC   | 142|  49|  69|  58| 129|  54|LEVITATE    |-------     |
+345|LILEEP    |ROCK/GRASS       |  61|  24|  56|  92|  68|  55|SUCTION CUPS|-------     |
+346|CRADILY   |ROCK/GRASS       | 101|  83|  82|  41| 102|  85|SUCTION CUPS|-------     |
+347|ANORITH   |ROCK/BUG         |  80|  27|  61|  73|  62|  51|BATTLE ARMOR|-------     |
+348|ARMALDO   |ROCK/BUG         |  73| 100| 119|  68|  89|  46|BATTLE ARMOR|-------     |
+349|FEEBAS    |WATER            |  37|  35|  21|  33|  41|  33|SWIFT SWIM  |-------     |
+350|MILOTIC   |WATER            | 147|  42| 140|  63|  37| 110|MARVEL SCALE|-------     |
+351|CASTFORM  |NORMAL           |  25|  97| 110| 121|  14|  54|FORECAST    |-------     |MYSTIC WATER (100%)
+352|KECLEON   |NORMAL           | 128|  24| 107|  34|  96|  51|COLOR CHANGE|-------     |PERSIM BERRY (rare)
+353|SHUPPET   |GHOST            |  74|  63|  27|  13|  73|  45|INSOMNIA    |-------     |SPELL TAG (rare)
+354|BANETTE   |GHOST            |  97|  65|  74|  60|  72|  87|INSOMNIA    |-------     |SPELL TAG (rare)
+355|DUSKULL   |GHOST            |  25|  29|  36|  89|  68|  48|LEVITATE    |-------     |SPELL TAG (rare)
+356|DUSCLOPS  |GHOST            |  68|  16|  70| 121| 120|  60|PRESSURE    |-------     |SPELL TAG (rare)
+357|TROPIUS   |GRASS/FLYING     |  32| 125|  71| 133|  77|  22|CHLOROPHYLL |-------     |
+358|CHIMECHO  |PSYCHIC          |  24| 143| 104|  21|  46|  87|LEVITATE    |-------     |
+359|ABSOL     |DARK             |  45|  51| 136|  12| 125|  95|PRESSURE    |-------     |
+360|WYNAUT    |PSYCHIC          |  30|  62|  27|  43|  52|  46|SHADOW TAG  |-------     |
+361|SNORUNT   |ICE              |  65|  35| 100|  16|  31|  53|INNER FOCUS |-------     |
+362|GLALIE    |ICE              |  77|  33| 108| 112| 100|  50|INNER FOCUS |-------     |NEVERMELTICE (rare)
+363|SPHEAL    |ICE/WATER        |  70|  18|  69|  67|  18|  48|THICK FAT   |-------     |
+364|SEALEO    |ICE/WATER        |  47|  79|  65|  84|  38|  96|THICK FAT   |-------     |
+365|WALREIN   |ICE/WATER        | 139|  45|  57| 123|  18| 148|THICK FAT   |-------     |
+366|CLAMPERL  |WATER            |  51|  55|  60|  50|  63|  66|SHELL ARMOR |-------     |BLUE SHARD (rare)
+367|HUNTAIL   |WATER            |  40|  23| 160| 149|  27|  87|SWIFT SWIM  |-------     |
+368|GOREBYSS  |WATER            |  58|  81| 121| 107|  13| 105|SWIFT SWIM  |-------     |
+369|RELICANTH |WATER/ROCK       |  24|  95| 109|  41| 113| 103|SWIFT SWIM  |ROCK HEAD   |GREEN SHARD (rare)
+370|LUVDISC   |WATER            |  29| 107|  46|  91|  20|  38|SWIFT SWIM  |-------     |HEART SCALE (common)
+371|BAGON     |DRAGON           |  32|  46|  51|  62|  45|  64|ROCK HEAD   |-------     |DRAGON SCALE (rare)
+372|SHELGON   |DRAGON           | 102|  77|  45|  92|  54|  50|ROCK HEAD   |-------     |DRAGON SCALE (rare)
+373|SALAMENCE |DRAGON/FLYING    |  64| 185| 150| 121|  58|  22|INTIMIDATE  |-------     |DRAGON SCALE (rare)
+374|BELDUM    |STEEL/PSYCHIC    |  73|  55|  16|  51|  60|  45|CLEAR BODY  |-------     |METAL COAT (rare)
+375|METANG    |STEEL/PSYCHIC    |  99|  24|  97|  47| 108|  45|CLEAR BODY  |-------     |METAL COAT (rare)
+376|METAGROSS |STEEL/PSYCHIC    |  21| 132|  76|  91| 180| 100|CLEAR BODY  |-------     |METAL COAT (rare)
+377|REGIROCK  |ROCK             |  74|  28| 136| 125|  96| 121|CLEAR BODY  |-------     |
+378|REGICE    |ICE              | 218|  63|  94|  25| 120|  60|CLEAR BODY  |-------     |
+379|REGISTEEL |STEEL            | 148|  83|  86|  26| 115| 122|CLEAR BODY  |-------     |
+380|LATIAS    |DRAGON/PSYCHIC   |  23|  61| 107|  45| 175| 188|LEVITATE    |-------     |
+381|LATIOS    |DRAGON/PSYCHIC   | 126|  27|  35| 186|  91| 134|LEVITATE    |-------     |
+382|KYOGRE    |WATER            |  53| 193|  55|  17| 216| 136|DRIZZLE     |-------     |
+383|GROUDON   |GROUND           | 223| 111| 118| 186|  19|  14|DROUGHT     |-------     |
+384|RAYQUAZA  |DRAGON/FLYING    | 131| 113| 119| 123| 103|  92|AIR LOCK    |-------     |
+385|JIRACHI   |STEEL/PSYCHIC    | 164| 144| 105|  94|  14|  80|SERENE GRACE|-------     |STAR PIECE (100%)
+386|DEOXYS    |PSYCHIC          |  66| 124| 156|  95|  35| 124|PRESSURE    |-------     |
+
+--Random 2-Evolution Starters--
+Set starter 1 to ZUBAT
+Set starter 2 to SPHEAL
+Set starter 3 to RALTS
+
+Pokemon Movesets: Unchanged.
+
+Trainers: Unchanged.
+
+Wild Pokemon: Unchanged.
+
+Static Pokemon: Unchanged.
+
+TM Moves: Unchanged.
+
+Move Tutor Moves: Unchanged.
+
+------------------------------------------------------------------
+Randomization of Fire Red (U) 1.0 completed.
+Time elapsed: 676ms
+RNG Calls: 2325
+------------------------------------------------------------------
