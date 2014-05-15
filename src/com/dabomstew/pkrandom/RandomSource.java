@@ -1,13 +1,5 @@
 package com.dabomstew.pkrandom;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Random;
-
-import javax.swing.JOptionPane;
-
-import com.mishadoff.randomorg.IntegerGenerator;
-
 /*----------------------------------------------------------------------------*/
 /*--  RandomSource.java - functions as a centralized source of randomness	--*/
 /*--  			     	  to allow the same seed to produce the same random --*/
@@ -33,159 +25,137 @@ import com.mishadoff.randomorg.IntegerGenerator;
 /*--  along with this program. If not, see <http://www.gnu.org/licenses/>.  --*/
 /*----------------------------------------------------------------------------*/
 
+import java.security.SecureRandom;
+
 public class RandomSource {
-	
-	// randoms generated from this come from random.org
-	private static IntegerGenerator ig = new IntegerGenerator();
-	
-	// this is the backup local random instance in case we get denied
-	private static Random backupSource = new Random();
-	
-	// this is a bunch of backup seeds fetched at the start in case random.org denies us
-	private static ArrayList<Integer> backupSeeds = new ArrayList<Integer>();
-	
-	// this value will be used to adjust the frame in which the local random backup is reseeded
-	private static int reseedTimeout;
-	
-	// this is the random queue which will hold the numbers we pull from en masse from random.org
-	private static ArrayList<Integer> queuedRandoms;
-	
-	static int calls = 0;
-	static int backupCalls = 0;
-	
-	public static RandomSourceInstance instance = new RandomSourceInstance();
-	
-	// this instance is used in the collections shuffle
-	private static class RandomSourceInstance extends Random
-	{
-		@Override
-		public int nextInt(int n)
-		{
-			return RandomSource.nextInt(n);
-		}		
-	}
 
-	public static int nextInt(int randomSize) {
-		incCalls();
+	private static SecureRandom source = new SecureRandom();
+	private static int calls = 0;
+	private static SecureRandom instance = new RandomSourceInstance();
 
-		try {
-//			return ig.generate(0, randomSize-1, 1).get(0);
-			
-			getMoreRandomsForTheQueue();
-			
-			return queuedRandoms.remove(0) % randomSize;
-		}
-		catch (IOException e) {
-			incrementBackupCalls();
-			return backupSource.nextInt(randomSize);
-		}
-	}
-
-	private static boolean getMoreRandomsForTheQueue()  throws IOException
-	{
-		if (queuedRandoms == null || queuedRandoms.size() < 1)
-		{
-			// grab a sheet of 10,000 randoms from random.org
-			try {
-				queuedRandoms = ig.generate(0, 1000000000, 10000);
-				return true; // successful
-			} catch (IOException e) {
-				System.out.println("Error grabbing random sheet");
-				throw new IOException("Error");
-			}
-		}
-		
-		return true;
-		
-	}
-
-	private static void incrementBackupCalls() 
-	{
-//		System.out.println("There was an error retrieving a value");
-//		System.out.println("Getting a backup value from a randomly seeded local instance");
-		
-		backupCalls++;
-		
-		System.out.println(calls);
-		
-		if (backupCalls > reseedTimeout)
-			setBackupSourceSeed();
-	}
-
-	private static void setBackupSourceSeed() {
-		backupCalls = 0;
-		int removedSeed = backupSeeds.remove(0);
-		backupSeeds.add(removedSeed); // re add this random seed to the end
-		
-		// reseed this
-		backupSource.setSeed(removedSeed);
-		
-	}
-	
-	public static void incCalls()
-	{
-		calls++;
-	}
-
-	public static double nextDouble() {
-		incCalls();
-		
-		try {
-//			return ((double)ig.generate(0, 1000000000-1, 1).get(0)) / 1000000000;
-			
-			getMoreRandomsForTheQueue();
-			
-			return (double)(queuedRandoms.remove(0)) / (double)(1000000000);
-		} 
-		catch (IOException e) {
-			incrementBackupCalls();
-			return backupSource.nextDouble();
-		}
-	}
-
-	public static double random() {
-		return nextDouble();
-	}
-
-	public static Random instance() {
-		return instance;
+	public static void reset() {
+		source = new SecureRandom();
+		calls = 0;
 	}
 
 	public static void seed(long seed) {
+		source.setSeed(seed);
 		calls = 0;
-		ig = new IntegerGenerator();
-				
-		// fetch our backup seeds for if the generator denies us
-		try {
-			ArrayList<Integer> lengthAndTimeout = ig.generate(2, 1000, 2);
-			int length = lengthAndTimeout.remove(0);
-			reseedTimeout = lengthAndTimeout.remove(0);
-			
-			backupSeeds = ig.generate(0, 1000000000, length);
-		}
-		catch (IOException e) {
-			System.out.println("Can't even get backup seeds, random.org is rejecting everything.");
-			System.out.println("Perhaps try getting a new IP address? We will need at least some initial seeds.");
-			JOptionPane.showMessageDialog(null, "Error: Could not get random information from random.org. Are you online?");
-			e.printStackTrace();
-			JOptionPane.showMessageDialog(null, e.getMessage());
-			// rage quit
-			System.exit(0);
-		}
-	
-		// and set the backup source seed
-		setBackupSourceSeed();
-		
+	}
+
+	public static double random() {
+		calls++;
+		return source.nextDouble();
+	}
+
+	public static int nextInt(int size) {
+		calls++;
+		return source.nextInt(size);
+	}
+
+	public static void nextBytes(byte[] bytes) {
+		calls++;
+		source.nextBytes(bytes);
+	}
+
+	public static int nextInt() {
+		calls++;
+		return source.nextInt();
+	}
+
+	public static long nextLong() {
+		calls++;
+		return source.nextLong();
+	}
+
+	public static boolean nextBoolean() {
+		calls++;
+		return source.nextBoolean();
+	}
+
+	public static float nextFloat() {
+		calls++;
+		return source.nextFloat();
+	}
+
+	public static double nextDouble() {
+		calls++;
+		return source.nextDouble();
+	}
+
+	public static synchronized double nextGaussian() {
+		calls++;
+		return source.nextGaussian();
 	}
 
 	public static long pickSeed() {
-		// this will never do anything as we don't really have seeds
-		seed(27);
-		return 27;
+		long value = 0;
+		byte[] by = SecureRandom.getSeed(8);
+		for (int i = 0; i < by.length; i++) {
+			value += ((long) by[i] & 0xffL) << (8 * i);
+		}
+		return value;
+	}
+
+	public static SecureRandom instance() {
+		return instance;
 	}
 
 	public static int callsSinceSeed() {
 		return calls;
 	}
 
+	private static class RandomSourceInstance extends SecureRandom {
+
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = -4876737183441746322L;
+
+		@Override
+		public synchronized void setSeed(long seed) {
+			RandomSource.seed(seed);
+		}
+
+		@Override
+		public void nextBytes(byte[] bytes) {
+			RandomSource.nextBytes(bytes);
+		}
+
+		@Override
+		public int nextInt() {
+			return RandomSource.nextInt();
+		}
+
+		@Override
+		public int nextInt(int n) {
+			return RandomSource.nextInt(n);
+		}
+
+		@Override
+		public long nextLong() {
+			return RandomSource.nextLong();
+		}
+
+		@Override
+		public boolean nextBoolean() {
+			return RandomSource.nextBoolean();
+		}
+
+		@Override
+		public float nextFloat() {
+			return RandomSource.nextFloat();
+		}
+
+		@Override
+		public double nextDouble() {
+			return RandomSource.nextDouble();
+		}
+
+		@Override
+		public synchronized double nextGaussian() {
+			return RandomSource.nextGaussian();
+		}
+
+	}
 }
